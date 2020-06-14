@@ -8,7 +8,9 @@ class Socialize extends Tags
 {
     public function index()
     {
-        return view('socialize::buttons');
+        return view('socialize::buttons')->with([
+            'layout' => $this->params->get('layout') ?? null
+        ]);
     }
 
     public function css()

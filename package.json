@@ -1,0 +1,25 @@
+{
+  "name": "socialize",
+  "version": "1.0.0",
+  "description": "Social sharing buttons for statamic",
+  "scripts": {
+    "dev": "postcss build resources/css/buttons.css -o dist/buttons.css",
+    "production": "NODE_ENV=production npm run dev",
+    "prod": "npm run production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austenc/socialize.git"
+  },
+  "author": "Austen Cameron",
+  "bugs": {
+    "url": "https://github.com/austenc/socialize/issues"
+  },
+  "homepage": "https://github.com/austenc/socialize#readme",
+  "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-prepend-selector": "^0.3.1",
+    "tailwindcss": "^1.4.6"
+  }
+}

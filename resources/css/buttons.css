@@ -1,0 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+.socialize-btn {
+  @apply w-10 h-10 flex items-center justify-center;
+}
+
+@tailwind utilities;

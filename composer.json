@@ -1,0 +1,29 @@
+{
+  "name": "austenc/socialize",
+  "description": "Simple social sharing buttons for your Statamic site",
+  "type": "statamic-addon",
+  "autoload": {
+    "psr-4": {
+      "Austenc\\Socialize\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Austen Cameron"
+    }
+  ],
+  "support": {
+    "email": "info@406.io"
+  },
+  "extra": {
+    "statamic": {
+      "name": "Socialize",
+      "description": "Simple social sharing buttons for your Statamic site"
+    },
+    "laravel": {
+      "providers": [
+        "Austenc\\Socialize\\ServiceProvider"
+      ]
+    }
+  }
+}

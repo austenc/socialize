@@ -1,7 +1,10 @@
 module.exports = {
-  purge: ['./resources/**/*', 'src/**/*.php'],
+  purge: ['./resources/**/*', 'src/**/*.php', 'resources/css/*.css'],
   theme: {
     extend: {
+      inset: {
+        '1/2': '50%',
+      },
       scale: {
         '115': '1.15',
       },

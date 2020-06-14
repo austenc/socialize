@@ -2,12 +2,48 @@
 
 @tailwind components;
 
+.socialize-container {
+  @apply z-10;
+}
+
 .socialize-btn {
-  @apply w-10 h-10 flex items-center justify-center transform origin-left transition-all duration-300;
+  @apply w-10 h-10 flex items-center justify-center transform origin-center transition-all duration-300;
 }
 
 .socialize-btn:hover {
-  @apply scale-115 z-10;
+  @apply scale-115 z-20;
+}
+
+.layout-inline {
+  @apply flex;
+}
+
+.layout-left {
+  @apply fixed left-0 transform top-1/2 -translate-y-1/2;
+}
+.layout-left .socialize-btn {
+  @apply origin-left;
+}
+
+.layout-right {
+  @apply fixed right-0 transform top-1/2 -translate-y-1/2;
+}
+.layout-right .socialize-btn {
+  @apply origin-right;
+}
+
+.layout-top {
+  @apply fixed flex top-0 transform left-1/2 -translate-x-1/2;
+}
+.layout-top .socialize-btn {
+  @apply origin-top;
+}
+
+.layout-bottom {
+  @apply fixed flex bottom-0 transform left-1/2 -translate-x-1/2;
+}
+.layout-bottom .socialize-btn {
+  @apply origin-bottom;
 }
 
 @tailwind utilities;

@@ -1,5 +1,5 @@
 <div class="socialize">
-    <div class="fixed left-0 transform -translate-y-1/2" style="top: 50%;">
+    <div class="socialize-container layout-{{ $layout ?? 'inline space-x-2' }}">
         <a class="socialize-btn text-white bg-social-twitter" href="#twitter">
             <span class="transition-all hidden group-hover:inline-block duration-300">Twitter</span>
             @include('socialize::icons.twitter')

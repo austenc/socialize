@@ -3,5 +3,6 @@ module.exports = {
     require('tailwindcss'),
     require('postcss-prepend-selector')({ selector: '.socialize ' }),
     require('autoprefixer'),
+    require('cssnano'),
   ],
 }

@@ -3,7 +3,11 @@
 @tailwind components;
 
 .socialize-btn {
-  @apply w-10 h-10 flex items-center justify-center;
+  @apply w-10 h-10 flex items-center justify-center transform origin-left transition-all duration-300;
+}
+
+.socialize-btn:hover {
+  @apply scale-115 z-10;
 }
 
 @tailwind utilities;

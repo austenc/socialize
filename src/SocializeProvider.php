@@ -25,8 +25,8 @@ class SocializeProvider extends AddonServiceProvider
         parent::boot();
         Nav::extend(function ($nav) {
             $nav->addons('Socialize')
-                ->route('socialize.settings')
-                ->icon('heart');
+                ->route('socialize.settings.index')
+                ->icon('addons');
         });
     }
 }

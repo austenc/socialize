@@ -22,7 +22,7 @@
     },
     "laravel": {
       "providers": [
-        "Austenc\\Socialize\\ServiceProvider"
+        "Austenc\\Socialize\\SocializeProvider"
       ]
     }
   }

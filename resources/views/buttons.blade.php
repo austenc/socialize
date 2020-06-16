@@ -10,7 +10,7 @@
         {{-- <a class="socialize-btn text-white bg-social-instagram" href="#instagram" target="_blank">
             @include('socialize::icons.instagram')
         </a> --}}
-        <a class="socialize-btn text-white bg-social-pinterest" href="#pinterest" target="_blank">
+        <a class="socialize-btn text-white bg-social-pinterest" href="http://pinterest.com/pin/create/link/?url=https://google.com" target="_blank">
             @include('socialize::icons.pinterest')
         </a>
         <a class="socialize-btn text-white bg-gray-900" href="#email" target="_blank">

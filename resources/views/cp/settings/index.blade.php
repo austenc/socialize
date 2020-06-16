@@ -3,7 +3,7 @@
 
 @section('content')
     <publish-form
-        title="Example Title Component"
+        title="Socialize Settings"
         action="{{ cp_route('socialize.settings.store') }}"
         :blueprint='@json($blueprint)'
         :meta='@json($meta)'

@@ -13,22 +13,14 @@ class SocializeController extends CpController
         $blueprint = new SocialProviderBlueprint();
         $fields = $blueprint()->fields()->preProcess();
 
-        return view('socialize::settings.index', [
+        return view('socialize::cp.settings.index', [
             'blueprint' => $blueprint()->toPublishArray(),
             'values'    => $fields->values(),
             'meta'      => $fields->meta(),
         ]);
-        // return view('socialize::settings.index', [
-        //     'taxes' => collect(),
-        //     'columns' => [
-        //         Column::make('title')->label('Title Gere'),
-        //         Column::make('percentage')->label('Percentage Column'),
-        //     ],
-        // ]);
     }
 
-    public function store(TaxRateRequest $request): TaxRate
+    public function store()
     {
-        dd('store plz');
     }
 }

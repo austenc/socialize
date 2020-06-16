@@ -10,33 +10,74 @@ class SocialProviderBlueprint
     {
         return Blueprint::make()->setContents([
             'sections' => [
-                'main'    => [
+                'Twitter' => [
                     'fields' => [
                         [
-                            'handle' => 'label',
+                            'handle' => 'twitter_enabled',
                             'field' => [
-                                'type' => 'section',
-                                'display' => 'Twitter',
-                                'instructions' => 'Settings for the Twitter sharing button'
-                            ]
-                        ],
-                        [
-                            'handle' => 'enabled',
-                            'field' => [
+                                'display' => 'Button Enabled',
                                 'type' => 'toggle',
                                 'width' => '25'
                             ]
                         ],
                         [
-                            'handle' => 'message',
+                            'handle' => 'twitter_message',
                             'field'  => [
                                 'type'     => 'text',
                                 'width'    => '75',
-                                'display'  => 'Sharing message',
+                                'display'  => 'Default message / hashtags in the sharing popup',
                                 'validate' => 'required',
                             ],
                         ],
                     ],
+                ],
+                'Instagram' => [
+                    'fields' => [
+                        [
+                            'handle' => 'instagram_enabled',
+                            'field' => [
+                                'display' => 'Button Enabled',
+                                'type' => 'toggle',
+                                'width' => '25'
+                            ]
+                        ],
+                    ]
+                ],
+                'Facebook' => [
+                    'fields' => [
+                        [
+                            'handle' => 'facebook_enabled',
+                            'field' => [
+                                'display' => 'Button Enabled',
+                                'type' => 'toggle',
+                                'width' => '25'
+                            ]
+                        ],
+                    ]
+                ],
+                'Pinterest' => [
+                    'fields' => [
+                        [
+                            'handle' => 'pinterest_enabled',
+                            'field' => [
+                                'display' => 'Button Enabled',
+                                'type' => 'toggle',
+                                'width' => '25'
+                            ]
+                        ],
+                    ]
+                ],
+                'Email' => [
+                    'fields' => [
+                        [
+                            'handle' => 'email_enabled',
+                            'field' => [
+                                'display' => 'Button Enabled',
+                                'type' => 'toggle',
+                                'width' => '25'
+                            ]
+                        ],
+                    ]
                 ],
             ],
         ]);

@@ -7,6 +7,11 @@
       "Austenc\\Socialize\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Austenc\\Socialize\\Tests\\": "tests"
+    }
+  },
   "authors": [
     {
       "name": "Austen Cameron"
@@ -25,5 +30,10 @@
         "Austenc\\Socialize\\SocializeProvider"
       ]
     }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^5.3",
+    "nunomaduro/collision": "^4.2",
+    "statamic/cms": "^3@beta"
   }
 }

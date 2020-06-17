@@ -15,18 +15,18 @@ class SocialProviderBlueprint
                         [
                             'handle' => 'twitter_enabled',
                             'field' => [
-                                'display' => 'Button Enabled',
                                 'type' => 'toggle',
-                                'width' => '25'
+                                'display' => 'Button Enabled',
+                                'width' => 25
                             ]
                         ],
                         [
                             'handle' => 'twitter_url',
                             'field'  => [
                                 'type' => 'text',
-                                'width' => '75',
+                                'width' => 75,
                                 'display' => 'URL',
-                                'instructions'  => 'URL included with the tweet. Leave blank to use current page URL',
+                                'instructions'  => 'URL included with the tweet. Leave blank to use current page\'s URL',
                                 // 'validate' => 'required',
                             ],
                         ],
@@ -74,11 +74,20 @@ class SocialProviderBlueprint
                         [
                             'handle' => 'facebook_enabled',
                             'field' => [
-                                'display' => 'Button Enabled',
                                 'type' => 'toggle',
-                                'width' => '25'
+                                'display' => 'Button Enabled',
+                                'width' => 25
                             ]
                         ],
+                        [
+                            'handle' => 'facebook_url',
+                            'field' => [
+                                'type' => 'text',
+                                'display' => 'URL',
+                                'instructions' => 'URL to share. Leave blank to default to current page\'s URL',
+                                'width' => 75
+                            ]
+                        ]
                     ]
                 ],
                 'Pinterest' => [
@@ -86,11 +95,27 @@ class SocialProviderBlueprint
                         [
                             'handle' => 'pinterest_enabled',
                             'field' => [
-                                'display' => 'Button Enabled',
                                 'type' => 'toggle',
-                                'width' => '25'
+                                'display' => 'Button Enabled',
+                                'width' => 25
                             ]
                         ],
+                        [
+                            'handle' => 'pinterest_url',
+                            'field' => [
+                                'type' => 'text',
+                                'width' => 75,
+                                'display' => 'URL',
+                                'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
+                            ]
+                        ],
+                        [
+                            'handle' => 'pinterest_image',
+                            'field' => [
+                                'type' => 'assets',
+                                'display' => 'Default Image',
+                            ]
+                        ]
                     ]
                 ],
                 'Email' => [
@@ -98,9 +123,9 @@ class SocialProviderBlueprint
                         [
                             'handle' => 'email_enabled',
                             'field' => [
-                                'display' => 'Button Enabled',
                                 'type' => 'toggle',
-                                'width' => '25'
+                                'display' => 'Button Enabled',
+                                'width' => 25
                             ]
                         ],
                         [
@@ -108,7 +133,7 @@ class SocialProviderBlueprint
                             'field'  => [
                                 'type' => 'text',
                                 'display' => 'Subject',
-                                'width' => '75',
+                                'width' => 75,
                                 'instructions'  => 'The default subject line of the email',
                                 // 'validate' => 'required',
                             ],

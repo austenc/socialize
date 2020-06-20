@@ -109,13 +109,13 @@ class SocialProviderBlueprint
                                 'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
                             ]
                         ],
-                        [
-                            'handle' => 'pinterest_image',
-                            'field' => [
-                                'type' => 'assets',
-                                'display' => 'Default Image',
-                            ]
-                        ]
+                        // [
+                        //     'handle' => 'pinterest_image',
+                        //     'field' => [
+                        //         'type' => 'assets',
+                        //         'display' => 'Default Image',
+                        //     ]
+                        // ]
                     ]
                 ],
                 'Email' => [

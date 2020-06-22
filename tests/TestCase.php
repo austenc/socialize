@@ -8,11 +8,28 @@ use Statamic\Extend\Manifest;
 use Statamic\Providers\StatamicServiceProvider;
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
 
-class TestCase extends TestbenchTestCase
+abstract class TestCase extends TestbenchTestCase
 {
+    protected $shouldFakeVersion = true;
+
+    /**
+     * Setup the test environment.
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        if ($this->shouldFakeVersion) {
+            \Facades\Statamic\Version::shouldReceive('get')->andReturn('3.0.0-testing');
+            $this->addToAssertionCount(-1); // Dont want to assert this
+        }
+    }
     protected function getPackageProviders($app)
     {
-        return [StatamicServiceProvider::class, SocializeProvider::class];
+        return [
+            StatamicServiceProvider::class,
+            SocializeProvider::class
+        ];
     }
 
     protected function getPackageAliases($app)
@@ -32,7 +49,7 @@ class TestCase extends TestbenchTestCase
 
         $app->make(Manifest::class)->manifest = [
             'austenc/socialize' => [
-                'id'        => 'austenc/socialize',
+                'id' => 'austenc/socialize',
                 'namespace' => 'Austenc\\Socialize\\',
             ],
         ];
@@ -58,8 +75,8 @@ class TestCase extends TestbenchTestCase
         // Setting the user repository to the default flat file system
         $app['config']->set('statamic.users.repository', 'file');
 
-        Statamic::pushCpRoutes(function () {
-            return require_once realpath(__DIR__ . '/../routes/cp.php');
-        });
+        // Statamic::pushCpRoutes(function () {
+        //     return require_once realpath(__DIR__ . '/../routes/cp.php');
+        // });
     }
 }

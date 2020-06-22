@@ -2,8 +2,8 @@
 
 namespace Austenc\Socialize\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Austenc\Socialize\Blueprints\SocialProviderBlueprint;
-use Statamic\CP\Column;
 use Statamic\Http\Controllers\CP\CpController;
 
 class SocializeController extends CpController
@@ -20,7 +20,12 @@ class SocializeController extends CpController
         ]);
     }
 
-    public function store()
+    public function update(Request $request)
     {
+        $blueprint = new SocialProviderBlueprint();
+        $fields = $blueprint()->fields()->addValues($request->all());
+        $fields->validate();
+        $values = $fields->process()->values();
+        // $tax->update($values->toArray());
     }
 }

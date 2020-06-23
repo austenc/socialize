@@ -74,9 +74,5 @@ abstract class TestCase extends TestbenchTestCase
 
         // Setting the user repository to the default flat file system
         $app['config']->set('statamic.users.repository', 'file');
-
-        // Statamic::pushCpRoutes(function () {
-        //     return require_once realpath(__DIR__ . '/../routes/cp.php');
-        // });
     }
 }

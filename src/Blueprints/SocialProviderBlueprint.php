@@ -27,7 +27,7 @@ class SocialProviderBlueprint
                                 'width' => 75,
                                 'display' => 'URL',
                                 'instructions'  => 'URL included with the tweet. Leave blank to use current page\'s URL',
-                                // 'validate' => 'required',
+                                'validate' => 'required_with:twitter_enabled',
                             ],
                         ],
                         [
@@ -52,23 +52,10 @@ class SocialProviderBlueprint
                                 'type' => 'text',
                                 'display' => 'Related Accounts',
                                 'instructions'  => 'A comma-separated list of accounts related to the content of the shared URI',
-                                // 'validate' => 'required',
                             ],
                         ],
                     ],
                 ],
-                // 'Instagram' => [
-                //     'fields' => [
-                //         [
-                //             'handle' => 'instagram_enabled',
-                //             'field' => [
-                //                 'display' => 'Button Enabled',
-                //                 'type' => 'toggle',
-                //                 'width' => '25'
-                //             ]
-                //         ],
-                //     ]
-                // ],
                 'Facebook' => [
                     'fields' => [
                         [
@@ -85,39 +72,42 @@ class SocialProviderBlueprint
                                 'type' => 'text',
                                 'display' => 'URL',
                                 'instructions' => 'URL to share. Leave blank to default to current page\'s URL',
-                                'width' => 75
-                            ]
+                                'width' => 75,
+                                'validate' => 'required_with:facebook_enabled'
+                            ],
                         ]
                     ]
                 ],
-                'Pinterest' => [
-                    'fields' => [
-                        [
-                            'handle' => 'pinterest_enabled',
-                            'field' => [
-                                'type' => 'toggle',
-                                'display' => 'Button Enabled',
-                                'width' => 25
-                            ]
-                        ],
-                        [
-                            'handle' => 'pinterest_url',
-                            'field' => [
-                                'type' => 'text',
-                                'width' => 75,
-                                'display' => 'URL',
-                                'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
-                            ]
-                        ],
-                        // [
-                        //     'handle' => 'pinterest_image',
-                        //     'field' => [
-                        //         'type' => 'assets',
-                        //         'display' => 'Default Image',
-                        //     ]
-                        // ]
-                    ]
-                ],
+                // 'Pinterest' => [
+                //     // 'fields' => [
+                //     //     [
+                //     //         'handle' => 'pinterest_enabled',
+                //     //         'field' => [
+                //     //             'type' => 'toggle',
+                //     //             'display' => 'Button Enabled',
+                //     //             'width' => 25
+                //     //         ]
+                //     //     ],
+                //     //     [
+                //     //         'handle' => 'pinterest_url',
+                //     //         'field' => [
+                //     //             'type' => 'text',
+                //     //             'width' => 75,
+                //     //             'display' => 'URL',
+                //     //             'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
+                //     //             'validate' => 'required_with:pinterest_enabled'
+                //     //         ],
+                //     //     ],
+                //         // [
+                //         //     'handle' => 'pinterest_image',
+                //         //     'field' => [
+                //         //         'type' => 'assets',
+                //         //         'display' => 'Default Image',
+                //         //         'validate' => 'required_with:pinterest_enabled'
+                //         //     ],
+                //         // ]
+                //     ]
+                // ],
                 'Email' => [
                     'fields' => [
                         [
@@ -135,7 +125,7 @@ class SocialProviderBlueprint
                                 'display' => 'Subject',
                                 'width' => 75,
                                 'instructions'  => 'The default subject line of the email',
-                                // 'validate' => 'required',
+                                'validate' => 'required_with:email_enabled'
                             ],
                         ],
                         [
@@ -144,7 +134,7 @@ class SocialProviderBlueprint
                                 'type' => 'textarea',
                                 'display' => 'Body',
                                 'instructions'  => 'Text contents of the email',
-                                // 'validate' => 'required',
+                                'validate' => 'required_with:email_enabled'
                             ],
                         ],
                     ]

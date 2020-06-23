@@ -20,18 +20,22 @@ class SettingsTest extends TestCase
         $response->assertSuccessful();
     }
 
-    public function test_can_store_settings()
+    public function test_fields_required_when_providers_enabled()
     {
         $response = $this->put(route('statamic.cp.socialize.settings.update'), [
-            'example' => 'nothin'
+            'twitter_enabled' => true,
+            'facebook_enabled' => true,
+            // 'pinterest_enabled' => true,
+            'email_enabled' => true
         ]);
 
-        $response->assertSuccessful();
-        $response->assertSessionHasNoErrors();
-
-
-        $this->assertTrue(true);
-
-        // Assert that there is data
+        $response->assertSessionHasErrors([
+            'twitter_url',
+            'facebook_url',
+            // 'pinterest_url',
+            // 'pinterest_image',
+            'email_subject',
+            'email_text'
+        ]);
     }
 }

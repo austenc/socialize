@@ -78,36 +78,36 @@ class SocialProviderBlueprint
                         ]
                     ]
                 ],
-                // 'Pinterest' => [
-                //     // 'fields' => [
-                //     //     [
-                //     //         'handle' => 'pinterest_enabled',
-                //     //         'field' => [
-                //     //             'type' => 'toggle',
-                //     //             'display' => 'Button Enabled',
-                //     //             'width' => 25
-                //     //         ]
-                //     //     ],
-                //     //     [
-                //     //         'handle' => 'pinterest_url',
-                //     //         'field' => [
-                //     //             'type' => 'text',
-                //     //             'width' => 75,
-                //     //             'display' => 'URL',
-                //     //             'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
-                //     //             'validate' => 'required_with:pinterest_enabled'
-                //     //         ],
-                //     //     ],
-                //         // [
-                //         //     'handle' => 'pinterest_image',
-                //         //     'field' => [
-                //         //         'type' => 'assets',
-                //         //         'display' => 'Default Image',
-                //         //         'validate' => 'required_with:pinterest_enabled'
-                //         //     ],
-                //         // ]
-                //     ]
-                // ],
+                'Pinterest' => [
+                    'fields' => [
+                        [
+                            'handle' => 'pinterest_enabled',
+                            'field' => [
+                                'type' => 'toggle',
+                                'display' => 'Button Enabled',
+                                'width' => 25
+                            ]
+                        ],
+                        [
+                            'handle' => 'pinterest_url',
+                            'field' => [
+                                'type' => 'text',
+                                'width' => 75,
+                                'display' => 'URL',
+                                'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
+                                'validate' => 'required_with:pinterest_enabled'
+                            ],
+                        ],
+                        // [
+                        //     'handle' => 'pinterest_image',
+                        //     'field' => [
+                        //         'type' => 'assets',
+                        //         'display' => 'Default Image',
+                        //         'validate' => 'required_with:pinterest_enabled'
+                        //     ],
+                        // ]
+                    ]
+                ],
                 'Email' => [
                     'fields' => [
                         [

@@ -25,17 +25,17 @@ class SettingsTest extends TestCase
         $response = $this->put(route('statamic.cp.socialize.settings.update'), [
             'twitter_enabled' => true,
             'facebook_enabled' => true,
-            // 'pinterest_enabled' => true,
-            'email_enabled' => true
+            'email_enabled' => true,
+            'pinterest_enabled' => true,
         ]);
 
         $response->assertSessionHasErrors([
             'twitter_url',
             'facebook_url',
-            // 'pinterest_url',
-            // 'pinterest_image',
             'email_subject',
-            'email_text'
+            'email_text',
+            'pinterest_url',
+            // 'pinterest_image',
         ]);
     }
 }

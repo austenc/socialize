@@ -56,7 +56,6 @@ class SettingsTest extends TestCase
         $response = $this->put(cp_route('socialize.settings.update'), $posted);
         $response->assertSuccessful();
         $this->assertFileExists(config('statamic.socialize.path'));
-        $values = YAML::file(config('statamic.socialize.path'))->parse();
-        $this->assertArraySubset($posted, $values);
+        $this->assertArraySubset($posted, YAML::file(config('statamic.socialize.path'))->parse());
     }
 }

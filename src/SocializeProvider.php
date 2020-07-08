@@ -29,4 +29,11 @@ class SocializeProvider extends AddonServiceProvider
                 ->icon('addons');
         });
     }
+
+    public function register()
+    {
+        parent::register();
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/socialize.php', 'statamic.socialize');
+    }
 }

@@ -98,14 +98,15 @@ class SocialProviderBlueprint
                                 'validate' => 'required_if:pinterest_enabled,true'
                             ],
                         ],
-                        [
-                            'handle' => 'pinterest_image',
-                            'field' => [
-                                'type' => 'assets',
-                                'display' => 'Default Image',
-                                'validate' => 'required_if:pinterest_enabled,true'
-                            ],
-                        ]
+                        // [
+                        //     'handle' => 'pinterest_image',
+                        //     'field' => [
+                        //         'type' => 'assets',
+                        //         'display' => 'Default Image',
+                        //         'max_files' => 1,
+                        //         'validate' => 'required_if:pinterest_enabled,true'
+                        //     ],
+                        // ]
                     ]
                 ],
                 'Email' => [

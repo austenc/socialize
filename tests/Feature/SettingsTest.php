@@ -2,6 +2,7 @@
 
 namespace Austenc\Socialize\Tests;
 
+use Statamic\Facades\YAML;
 use Statamic\Facades\User;
 use Statamic\Assets\AssetContainer;
 
@@ -20,13 +21,13 @@ class SettingsTest extends TestCase
 
     public function test_see_settings_form()
     {
-        $response = $this->get(route('statamic.cp.socialize.settings.index'));
+        $response = $this->get(cp_route('socialize.settings.index'));
         $response->assertSuccessful();
     }
 
     public function test_fields_required_when_providers_enabled()
     {
-        $response = $this->put(route('statamic.cp.socialize.settings.update'), [
+        $response = $this->put(cp_route('socialize.settings.update'), [
             'twitter_enabled' => true,
             'facebook_enabled' => true,
             'email_enabled' => true,
@@ -39,7 +40,23 @@ class SettingsTest extends TestCase
             'email_subject',
             'email_text',
             'pinterest_url',
-            'pinterest_image',
+            // 'pinterest_image',
         ]);
+    }
+
+    public function test_update_twitter_settings()
+    {
+        $posted = [
+            'twitter_enabled' => true,
+            'twitter_url' => 'http://example.test',
+            'twitter_text' => 'Example twitter text',
+            'twitter_hashtags' => '#example #test',
+            'twitter_related' => 'test,related,accounts'
+        ];
+        $response = $this->put(cp_route('socialize.settings.update'), $posted);
+        $response->assertSuccessful();
+        $this->assertFileExists(config('statamic.socialize.path'));
+        $values = YAML::file(config('statamic.socialize.path'))->parse();
+        $this->assertArraySubset($posted, $values);
     }
 }

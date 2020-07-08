@@ -16,7 +16,7 @@ class SocializeController extends CpController
     {
         parent::__construct($request);
 
-        $this->path = base_path('content/addons/socialize.yaml');
+        $this->path = config('statamic.socialize.path');
     }
 
     public function index()

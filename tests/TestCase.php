@@ -92,5 +92,12 @@ abstract class TestCase extends TestbenchTestCase
 
         // Setting the user repository to the default flat file system
         $app['config']->set('statamic.users.repository', 'file');
+        $app['config']->set('statamic.socialize.path', __DIR__ . '/__fixtures__/dev-null/socialize.yaml');
+    }
+
+    public static function assertArraySubset($subset, $array, bool $checkForObjectIdentity = false, string $message = ''): void
+    {
+        $class = version_compare(app()->version(), 7, '>=') ? \Illuminate\Testing\Assert::class : \Illuminate\Foundation\Testing\Assert::class;
+        $class::assertArraySubset($subset, $array, $checkForObjectIdentity, $message);
     }
 }

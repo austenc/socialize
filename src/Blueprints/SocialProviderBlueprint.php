@@ -27,7 +27,7 @@ class SocialProviderBlueprint
                                 'width' => 75,
                                 'display' => 'URL',
                                 'instructions'  => 'URL included with the tweet. Leave blank to use current page\'s URL',
-                                'validate' => 'required_with:twitter_enabled',
+                                'validate' => 'required_if:twitter_enabled,true',
                             ],
                         ],
                         [
@@ -73,7 +73,7 @@ class SocialProviderBlueprint
                                 'display' => 'URL',
                                 'instructions' => 'URL to share. Leave blank to default to current page\'s URL',
                                 'width' => 75,
-                                'validate' => 'required_with:facebook_enabled'
+                                'validate' => 'required_if:facebook_enabled,true'
                             ],
                         ]
                     ]
@@ -95,7 +95,7 @@ class SocialProviderBlueprint
                                 'width' => 75,
                                 'display' => 'URL',
                                 'instructions' => 'URL to pin. Leave blank to default to the current page\'s URL',
-                                'validate' => 'required_with:pinterest_enabled'
+                                'validate' => 'required_if:pinterest_enabled,true'
                             ],
                         ],
                         [
@@ -103,7 +103,7 @@ class SocialProviderBlueprint
                             'field' => [
                                 'type' => 'assets',
                                 'display' => 'Default Image',
-                                'validate' => 'required_with:pinterest_enabled'
+                                'validate' => 'required_if:pinterest_enabled,true'
                             ],
                         ]
                     ]
@@ -125,7 +125,7 @@ class SocialProviderBlueprint
                                 'display' => 'Subject',
                                 'width' => 75,
                                 'instructions'  => 'The default subject line of the email',
-                                'validate' => 'required_with:email_enabled'
+                                'validate' => 'required_if:email_enabled,true'
                             ],
                         ],
                         [
@@ -134,7 +134,7 @@ class SocialProviderBlueprint
                                 'type' => 'textarea',
                                 'display' => 'Body',
                                 'instructions'  => 'Text contents of the email',
-                                'validate' => 'required_with:email_enabled'
+                                'validate' => 'required_if:email_enabled,true'
                             ],
                         ],
                     ]

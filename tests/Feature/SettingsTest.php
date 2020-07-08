@@ -39,7 +39,7 @@ class SettingsTest extends TestCase
             'email_subject',
             'email_text',
             'pinterest_url',
-            // 'pinterest_image',
+            'pinterest_image',
         ]);
     }
 }

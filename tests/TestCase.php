@@ -19,11 +19,29 @@ abstract class TestCase extends TestbenchTestCase
     {
         parent::setUp();
 
+        $uses = array_flip(class_uses_recursive(static::class));
+
+        if (isset($uses[PreventSavingStacheItemsToDisk::class])) {
+            $this->preventSavingStacheItemsToDisk();
+        }
+
         if ($this->shouldFakeVersion) {
             \Facades\Statamic\Version::shouldReceive('get')->andReturn('3.0.0-testing');
             $this->addToAssertionCount(-1); // Dont want to assert this
         }
     }
+
+    public function tearDown(): void
+    {
+        $uses = array_flip(class_uses_recursive(static::class));
+
+        if (isset($uses[PreventSavingStacheItemsToDisk::class])) {
+            $this->deleteFakeStacheDirectory();
+        }
+
+        parent::tearDown();
+    }
+
     protected function getPackageProviders($app)
     {
         return [

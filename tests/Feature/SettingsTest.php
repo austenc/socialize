@@ -3,15 +3,23 @@
 namespace Austenc\Socialize\Tests;
 
 use Statamic\Facades\User;
+use Illuminate\Support\Facades\Storage;
+use Statamic\Assets\AssetContainer;
 
 class SettingsTest extends TestCase
 {
+    // use PreventSavingStacheItemsToDisk;
+
     public function setUp(): void
     {
         parent::setUp();
         $this->user = User::make();
         $this->user->id(1)->email('test@example.com')->makeSuper();
         $this->be($this->user);
+
+        // tap(Storage::fake('test'))->getDriver()->getConfig()->set('url', '/assets');
+        // AssetContainer::make('test')->disk('test')->save();
+        // Storage::fake('dimensions-cache');
     }
 
     public function test_see_settings_form()

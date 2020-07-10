@@ -3,14 +3,15 @@
 namespace Austenc\Socialize\Tags;
 
 use Statamic\Tags\Tags;
+use Statamic\Facades\YAML;
 
 class Socialize extends Tags
 {
     public function index()
     {
         return view('socialize::buttons')->with([
-            'layout' => $this->params->get('layout') ?? null
-        ]);
+            'layout' => $this->params->get('layout') ?? null,
+        ] + (YAML::file(config('statamic.socialize.path'))->parse() ?? []));
     }
 
     public function css()

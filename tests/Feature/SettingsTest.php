@@ -46,16 +46,45 @@ class SettingsTest extends TestCase
 
     public function test_update_twitter_settings()
     {
-        $posted = [
+        $this->assertSettingsSavedToFile([
             'twitter_enabled' => true,
-            'twitter_url' => 'http://example.test',
+            'twitter_url' => 'http://twitter-example.test',
             'twitter_text' => 'Example twitter text',
             'twitter_hashtags' => '#example #test',
             'twitter_related' => 'test,related,accounts'
-        ];
-        $response = $this->put(cp_route('socialize.settings.update'), $posted);
+        ]);
+    }
+
+    public function test_update_facebook_settings()
+    {
+        $this->assertSettingsSavedToFile([
+            'facebook_enabled' => true,
+            'facebook_url' => 'http://fb-example.test'
+        ]);
+    }
+
+    public function test_update_pinterest_settings()
+    {
+        $this->assertSettingsSavedToFile([
+            'pinterest_enabled' => true,
+            'pinterest_url' => 'http://pinterest-example.test'
+        ]);
+    }
+
+    public function test_update_email_settings()
+    {
+        $this->assertSettingsSavedToFile([
+            'email_enabled' => true,
+            'email_subject' => 'Example Subject',
+            'email_text' => 'Testing an example email text'
+        ]);
+    }
+
+    protected function assertSettingsSavedToFile($settings)
+    {
+        $response = $this->put(cp_route('socialize.settings.update'), $settings);
         $response->assertSuccessful();
         $this->assertFileExists(config('statamic.socialize.path'));
-        $this->assertArraySubset($posted, YAML::file(config('statamic.socialize.path'))->parse());
+        $this->assertArraySubset($settings, YAML::file(config('statamic.socialize.path'))->parse());
     }
 }

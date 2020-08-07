@@ -1,7 +1,6 @@
 <div class="socialize">
     <div class="socialize-container layout-{{ $layout ?? 'inline space-x-2' }}">\
 
-        {{-- {{ url()->current() }} --}}
         {{-- Twitter --}}
         @if ($twitter_enabled ?? false)
             <a class="socialize-btn text-white bg-social-twitter" href="https://twitter.com/intent/tweet" target="_blank">

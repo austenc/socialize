@@ -1,8 +1,12 @@
 # Social Buttons
 
 ### TO DO
-- Hook up URL / text fields in buttons view
-- Hook up instagram image / get working with tests
-- Tweak styles / transitions to work better with z-index or ditch scaling
-- Figure out if we can cache settings in the stache?
-- Write a proper README 
+- [x] Tweak styles / transitions to work better with z-index or ditch scaling
+- [ ] Hook up fields for each button in buttons view
+- [ ] Can it cache settings in the stache so it doesn't go through file every time?
+- [ ] Add "inline" display option
+- [ ] Hook up pinterest image / get working with tests
+- [ ] Write a proper README 
+  - [ ] Requirements
+  - [ ] Installation instructions
+  - [ ] Roadmap (themes, counts, etc...)

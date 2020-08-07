@@ -26,7 +26,7 @@ class SocializeProvider extends AddonServiceProvider
         Nav::extend(function ($nav) {
             $nav->tools('Socialize')
                 ->route('socialize.settings.index')
-                ->icon('addons');
+                ->icon('users-multiple');
         });
     }
 

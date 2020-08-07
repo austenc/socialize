@@ -10,10 +10,6 @@
   @apply w-10 h-10 flex items-center justify-center transform origin-center transition-all duration-300;
 }
 
-.socialize-btn:hover {
-  @apply scale-115 z-20;
-}
-
 .layout-inline {
   @apply flex;
 }
@@ -21,29 +17,29 @@
 .layout-left {
   @apply fixed left-0 transform top-1/2 -translate-y-1/2;
 }
-.layout-left .socialize-btn {
-  @apply origin-left;
+.layout-left .socialize-btn:hover {
+  @apply w-12;
 }
 
 .layout-right {
   @apply fixed right-0 transform top-1/2 -translate-y-1/2;
 }
-.layout-right .socialize-btn {
-  @apply origin-right;
+.layout-right .socialize-btn:hover {
+  @apply w-12;
 }
 
 .layout-top {
   @apply fixed flex top-0 transform left-1/2 -translate-x-1/2;
 }
-.layout-top .socialize-btn {
-  @apply origin-top;
+.layout-top .socialize-btn:hover {
+  @apply h-12;
 }
 
 .layout-bottom {
   @apply fixed flex bottom-0 transform left-1/2 -translate-x-1/2;
 }
-.layout-bottom .socialize-btn {
-  @apply origin-bottom;
+.layout-bottom .socialize-btn:hover {
+  @apply h-12;
 }
 
 @tailwind utilities;

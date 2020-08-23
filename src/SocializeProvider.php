@@ -3,21 +3,21 @@
 namespace Austenc\Socialize;
 
 use Austenc\Socialize\Tags\Socialize;
-use Statamic\Providers\AddonServiceProvider;
 use Statamic\Facades\CP\Nav;
+use Statamic\Providers\AddonServiceProvider;
 
 class SocializeProvider extends AddonServiceProvider
 {
-    protected $publishables = [
-        __DIR__ . '/../dist/buttons.css' =>  'css/buttons.css'
+    protected $stylesheets = [
+        __DIR__.'/../dist/buttons.css',
     ];
 
     protected $routes = [
-        'cp' => __DIR__ . '/../routes/cp.php'
+        'cp' => __DIR__.'/../routes/cp.php',
     ];
 
     protected $tags = [
-        Socialize::class
+        Socialize::class,
     ];
 
     public function boot()
@@ -34,6 +34,6 @@ class SocializeProvider extends AddonServiceProvider
     {
         parent::register();
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/socialize.php', 'statamic.socialize');
+        $this->mergeConfigFrom(__DIR__.'/../config/socialize.php', 'statamic.socialize');
     }
 }

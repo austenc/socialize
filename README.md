@@ -2,7 +2,7 @@
 
 🤩 **Simple and configurable social sharing buttons for Statamic** 🤩
 
-Easily add and configure social sharing intent buttons to your Statamic site.
+Easily add and configure social sharing intent buttons to your ****Statamic**** site.
 
 The following are supported (more coming soon!):
 
@@ -24,8 +24,8 @@ composer require austenc/socialize
 
 ## How to Use
 
-- In the Statamic Control Panel, click on the **Socialize** option under **Tools**. Next, toggle the buttons you'd like to enable and change any default settings.
 - Add `{{ socialize:css }}` to the `<head>` tag of your layout to pull in the CSS
+- In the Statamic Control Panel, click on the **Socialize** option under **Tools**. Next, toggle the buttons you'd like to enable and change any default settings.
 - Use the `{{ socialize }}` tag where you want the buttons to appear
 
 ### Changing the Layout

@@ -1,5 +1,5 @@
 <div class="socialize">
-    <div class="socialize-container layout-{{ $layout ?? 'inline space-x-2' }}">\
+    <div class="socialize-container layout-{{ $layout ?? 'inline space-x-2' }}">
 
         {{-- Twitter --}}
         @if ($twitter_enabled ?? false)
@@ -17,11 +17,11 @@
         @endif
 
         {{-- Pinterest --}}
-        @if ($pinterest_enabled ?? false)
+        {{-- @if ($pinterest_enabled ?? false)
             <a class="socialize-btn text-white bg-social-pinterest" href="http://pinterest.com/pin/create/button/?url={{ urlencode(url('/')) }}" target="_blank">
                 @include('socialize::icons.pinterest')
             </a>
-        @endif
+        @endif --}}
 
         {{-- Email --}}
         @if ($email_enabled ?? false)

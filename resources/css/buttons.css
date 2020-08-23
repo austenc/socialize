@@ -13,6 +13,9 @@
 .layout-inline {
   @apply flex;
 }
+.layout-inline .socialize-btn:hover {
+  @apply scale-110;
+}
 
 .layout-left {
   @apply fixed left-0 transform top-1/2 -translate-y-1/2;
@@ -22,10 +25,10 @@
 }
 
 .layout-right {
-  @apply fixed right-0 transform top-1/2 -translate-y-1/2;
+  @apply fixed flex flex-col items-end right-0 transform top-1/2 -translate-y-1/2;
 }
 .layout-right .socialize-btn:hover {
-  @apply w-12;
+  @apply w-12 origin-right;
 }
 
 .layout-top {
@@ -36,10 +39,10 @@
 }
 
 .layout-bottom {
-  @apply fixed flex bottom-0 transform left-1/2 -translate-x-1/2;
+  @apply fixed flex bottom-0 transform left-1/2 -translate-x-1/2 items-end;
 }
 .layout-bottom .socialize-btn:hover {
-  @apply h-12;
+  @apply h-12 origin-bottom;
 }
 
 @tailwind utilities;

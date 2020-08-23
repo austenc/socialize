@@ -2,9 +2,9 @@
 
 namespace Austenc\Socialize\Tests;
 
-use Statamic\Facades\YAML;
-use Statamic\Facades\User;
 use Statamic\Assets\AssetContainer;
+use Statamic\Facades\User;
+use Statamic\Facades\YAML;
 
 class SettingsTest extends TestCase
 {
@@ -25,22 +25,15 @@ class SettingsTest extends TestCase
         $response->assertSuccessful();
     }
 
-    public function test_fields_required_when_providers_enabled()
+    public function test_email_fields_required_when_email_enabled()
     {
         $response = $this->put(cp_route('socialize.settings.update'), [
-            'twitter_enabled' => true,
-            'facebook_enabled' => true,
             'email_enabled' => true,
-            'pinterest_enabled' => true,
         ]);
 
         $response->assertSessionHasErrors([
-            'twitter_url',
-            'facebook_url',
             'email_subject',
             'email_text',
-            'pinterest_url',
-            // 'pinterest_image',
         ]);
     }
 
@@ -51,7 +44,18 @@ class SettingsTest extends TestCase
             'twitter_url' => 'http://twitter-example.test',
             'twitter_text' => 'Example twitter text',
             'twitter_hashtags' => '#example #test',
-            'twitter_related' => 'test,related,accounts'
+            'twitter_related' => 'test,related,accounts',
+        ]);
+    }
+
+    public function test_twitter_url_not_required_when_button_enabled()
+    {
+        $this->assertSettingsSavedToFile([
+            'twitter_enabled' => true,
+            'twitter_url' => '',
+            'twitter_text' => 'Example twitter text',
+            'twitter_hashtags' => '#example #test',
+            'twitter_related' => 'test,related,accounts',
         ]);
     }
 
@@ -59,24 +63,24 @@ class SettingsTest extends TestCase
     {
         $this->assertSettingsSavedToFile([
             'facebook_enabled' => true,
-            'facebook_url' => 'http://fb-example.test'
+            'facebook_url' => 'http://fb-example.test',
         ]);
     }
 
-    public function test_update_pinterest_settings()
-    {
-        $this->assertSettingsSavedToFile([
-            'pinterest_enabled' => true,
-            'pinterest_url' => 'http://pinterest-example.test'
-        ]);
-    }
+    // public function test_update_pinterest_settings()
+    // {
+    //     $this->assertSettingsSavedToFile([
+    //         'pinterest_enabled' => true,
+    //         'pinterest_url' => 'http://pinterest-example.test',
+    //     ]);
+    // }
 
     public function test_update_email_settings()
     {
         $this->assertSettingsSavedToFile([
             'email_enabled' => true,
             'email_subject' => 'Example Subject',
-            'email_text' => 'Testing an example email text'
+            'email_text' => 'Testing an example email text',
         ]);
     }
 

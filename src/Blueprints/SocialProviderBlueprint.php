@@ -17,8 +17,8 @@ class SocialProviderBlueprint
                             'field' => [
                                 'type' => 'toggle',
                                 'display' => 'Button Enabled',
-                                'width' => 25
-                            ]
+                                'width' => 25,
+                            ],
                         ],
                         [
                             'handle' => 'twitter_url',
@@ -27,7 +27,7 @@ class SocialProviderBlueprint
                                 'width' => 75,
                                 'display' => 'URL',
                                 'instructions'  => 'URL included with the tweet. Leave blank to use current page\'s URL',
-                                'validate' => 'required_if:twitter_enabled,true',
+                                'validate' => 'url',
                             ],
                         ],
                         [
@@ -63,8 +63,8 @@ class SocialProviderBlueprint
                             'field' => [
                                 'type' => 'toggle',
                                 'display' => 'Button Enabled',
-                                'width' => 25
-                            ]
+                                'width' => 25,
+                            ],
                         ],
                         [
                             'handle' => 'facebook_url',
@@ -73,10 +73,10 @@ class SocialProviderBlueprint
                                 'display' => 'URL',
                                 'instructions' => 'URL to share. Leave blank to default to current page\'s URL',
                                 'width' => 75,
-                                'validate' => 'required_if:facebook_enabled,true'
+                                'validate' => 'url',
                             ],
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
                 // 'Pinterest' => [
                 //     'fields' => [
@@ -116,8 +116,8 @@ class SocialProviderBlueprint
                             'field' => [
                                 'type' => 'toggle',
                                 'display' => 'Button Enabled',
-                                'width' => 25
-                            ]
+                                'width' => 25,
+                            ],
                         ],
                         [
                             'handle' => 'email_subject',
@@ -126,7 +126,7 @@ class SocialProviderBlueprint
                                 'display' => 'Subject',
                                 'width' => 75,
                                 'instructions'  => 'The default subject line of the email',
-                                'validate' => 'required_if:email_enabled,true'
+                                'validate' => 'required_if:email_enabled,true',
                             ],
                         ],
                         [
@@ -135,10 +135,10 @@ class SocialProviderBlueprint
                                 'type' => 'textarea',
                                 'display' => 'Body',
                                 'instructions'  => 'Text contents of the email',
-                                'validate' => 'required_if:email_enabled,true'
+                                'validate' => 'required_if:email_enabled,true',
                             ],
                         ],
-                    ]
+                    ],
                 ],
             ],
         ]);

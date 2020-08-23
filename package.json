@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Social sharing buttons for statamic",
   "scripts": {
-    "dev": "postcss build resources/css/buttons.css -o dist/buttons.css",
-    "production": "NODE_ENV=production npm run dev",
+    "dev": "NODE_ENV=production postcss build resources/css/buttons.css -o dist/buttons.css",
+    "production": " npm run dev",
     "prod": "npm run production"
   },
   "repository": {
